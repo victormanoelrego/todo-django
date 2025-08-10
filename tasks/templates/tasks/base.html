@@ -1,0 +1,8 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ToDo</title></head>
+<body>
+  <nav><a href="{% url 'tasks:list' %}">Tarefas</a></nav>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

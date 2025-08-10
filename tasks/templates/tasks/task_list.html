@@ -1,0 +1,15 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<h1>Lista de Tarefas</h1>
+<a href="{% url 'tasks:create' %}">+ Nova tarefa</a>
+<ul>
+  {% for task in tasks %}
+    <li>
+      <a href="{% url 'tasks:detail' task.pk %}">{{ task.title }}</a>
+      {% if task.completed %}✔{% endif %}
+    </li>
+  {% empty %}
+    <li>Sem tarefas.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
