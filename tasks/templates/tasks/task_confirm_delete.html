@@ -1,0 +1,9 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<h1>Confirma exclusão?</h1>
+<p>Tem certeza que quer excluir "{{ object.title }}"?</p>
+<form method="post">{% csrf_token %}
+  <button type="submit">Sim, excluir</button>
+  <a href="{% url 'tasks:detail' object.pk %}">Cancelar</a>
+</form>
+{% endblock %}
